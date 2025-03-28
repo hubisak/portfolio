@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <ul class='nav-bar'>
+                <li class='logo'><a><img src='img/logo.png'/></a></li>
+                <input type='checkbox' id='check' />
+                <span class="menu">
+                    <li><a href="#O mně">O MNĚ</a></li>
+                    <li><a href="#Hobby">HOBBY</a></li>
+                    <li><a href="#Projekty">PROJEKTY</a></li>
+                    <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+                </span>
+                <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+            </ul>
+        </nav>
+        </header>
+    
+    <div class="home">
+        <div class="name" data-aos="fade-left">
+            <h1 class="firstname">HUBERT</h1>
+            <h1 class="surname">POŠTULKA</h1>
+        </div>
+        <div class="homeimages">
+            <img class="homesideimages" src="img/imghome1.png" alt="imghome">
+            <img class="homeportret" src="img/portret.JPG" alt="portret">
+            <img class="homesideimages" src="img/imghome2.png" alt="imghome">
+        </div>
+            <div class="hometext">
+                <h1 data-aos="fade-right">Vývojář multimediálních aplikací</h1>  
+                    <h2 data-aos="fade-left">Student Střední školy Orbis Zlín</h2>
+                        </div>
+    </div>
+    <div id="O mně" class="about">
+        <h1>KDO JSEM ?</h1>
+            <img class="aboutimg" src="img/aboutimg.png" alt="aboutimg">
+                <p data-aos="fade-down" data-aos-anchor-placement="bottom-bottom">Jsem vývojář multimediálních aplikací s praxí v HTML a CSS. Mé technické dovednosti zahrnují základní znalosti Adobe Photoshop a vášeň pro fotografii, kterou se snažím neustále rozvíjet. Ve svém volném čase rád navštěvuji posilovnu, což mi pomáhá udržet tělesnou i mentální kondici. Své dovednosti a kreativitu využívám k tvorbě vizuálně poutavých projektů.</p>
+    </div>
+    
+    <div id="Hobby" class="like">
+        <h1>HOBBY</h1>
+            <p data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">Ačkoliv je to pro můj obor typické a je to takový stereotyp, že jen sedím doma u počítače a nic jiného nedělám, opak je pravdou.
+                Kromě věcí, kterými se chci živit mám i jako normální člověk zájmy, které mi pomáhají si udržet své zdraví. Jak fyzické tak i psychické.</p>
+                    
+         <div class="cards">   
+                <div class="card" style="background-image: url('img/card1.png')">
+                    <div class="card__content">
+                        <h1>GYM</h1>
+                        <h2>Do fitka už chodím něco přes rok a stalo se tak mojí každodenní rutinou.</h2>
+                    </div>
+                </div> 
+
+             <div class="card" style="background-image: url('img/card2.png')">
+                <div class="card__content">
+                    <h1>PŘÍRODA</h1>
+                    <h2>Do mých zájmů také patří příroda. Vždy si rád zajdu pročistit hlavu na čistý vzduch.</h2>
+                </div>
+            </div>
+            
+             <div class="card" style="background-image: url('img/card3.png')">
+                <div class="card__content">
+                    <h1>HUDBA</h1>
+                    <h2>K hudbě mám hluboký vztah. Naplňuje ve mně prázdné místo. Nedokážu bez ní být.</h2>
+                </div>
+             </div>            
+         </div>
+    </div>
+    <div id="Projekty" class="projects">
+        <div class="projekty-text">
+            <h1>MÉ PROJEKTY</h1>
+            <h2>Zde je pár ukázek z mých dosavadních projektů</h2>
+        </div>
+
+            <p data-aos="fade-left">Webová stránka na téma tanec - talentové zkoušky</p>
+            <div>
+                <img class="projectsimg" src="img/project-tanec.png" alt="project1">
+            </div>
+            <p data-aos="fade-right">Webová stránka na téma produkt </p>
+            <div>
+                <img class="projectsimg" src="img/project-product.png" alt="project2">
+            </div>
+            
+        </div>
+
+    <footer>
+            <div class="footericons">
+                <a href="https://www.instagram.com/hubert_postulka/" target="_blank"><img src="img/instaicon.png" alt=""></a>
+                <a href="https://github.com/hubisak" target="_blank"><img src="img/giticon.png" alt=""></a>
+                <a href="https://www.youtube.com/channel/UCGOzZ3Qs7iZWEeanvVtu52g" target="_blank"><img src="img/youtubeicon.png" alt="youtube"></a>
+            </div>
+                <div class="footertext">
+                    <a href="mailto:hubert.postulka@gmail.com" class="footermail"><h1>hubert.postulka@gmail.com</h1></a>
+                </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>

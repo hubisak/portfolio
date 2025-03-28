@@ -1,0 +1,518 @@
+::-webkit-scrollbar { width: 5px; height: 3px;}
+::-webkit-scrollbar-button {  background-color: #666; }
+::-webkit-scrollbar-track {  background-color: #646464;}
+::-webkit-scrollbar-track-piece { background-color: #000;}
+::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 1px;}
+::-webkit-scrollbar-corner { background-color: #646464;}
+::-webkit-resizer { background-color: #666;}
+html {
+  scroll-behavior: smooth;
+}
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body{
+  background: #414141;
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  max-width: fit-content;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+.nav-bar {
+  z-index: 1;
+  font-weight: 700;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  position: relative;
+  background-color: #1C1C1C;
+  padding: 18px 50px;
+  position: fixed;
+  opacity: 98%;
+}
+.logo img {
+  width: 45px;
+}
+.menu {
+  display: flex;
+}
+.menu li {
+  padding-left: 80px;
+}
+.menu li a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  transition: 0.15s ease-in-out;
+  position: relative;
+  text-transform: uppercase;
+}
+.menu li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+}
+a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color:#BBBBBB;
+  transform-origin: center;
+  transition: transform 0.30s ease-out;
+}
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: center;
+}
+.menu li a:hover:after {width: 100%;}
+.open-menu , .close-menu {
+  position: absolute;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: none;
+}
+.open-menu {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+.close-menu {
+  top: 20px;
+  right: 20px;
+}
+#check {display: none;}
+@media(max-width: 610px){
+  .menu {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 80%;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      z-index: 100;
+      background-color: #1C1C1C;
+      transition: all 0.2s ease-in-out;
+  }
+  .menu li {margin-top: 40px;}
+  .menu li a {padding: 10px;}
+  .open-menu , .close-menu {display: block;}
+  #check:checked ~ .menu {right: 0;}
+}
+.name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -20vw;
+}
+.firstname {
+  color: #BBBBBB;
+  display: flex;
+  font-size: 7vw;
+  padding-top: 50px;
+}
+.home {
+  padding-top: 10vh;
+}
+.surname {
+  color: #BBBBBB;
+  display: flex;
+  font-size: 7vw;
+  padding-top: 30px;
+  padding-left: 300px;
+}
+.homeportret {
+  width: 30vw;
+  border-radius: 10px;
+}
+.homeimages {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 100px;
+}
+.homesideimages {
+  width: 7vw;
+  object-fit: contain;
+}
+.hometext {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  font-size:1.2vw;
+  gap: 25px;
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 120px;
+}
+.about p {
+  width: 60%;
+  padding-top: 50px;
+  font-size: 20px;
+  color: white;
+  line-height: 25px;
+  text-align: center;
+  font-weight: 600;
+
+}
+.about h1 {
+  font-size: 4vw;
+  color: #c7c7c7;
+  padding-bottom: 30px;
+}
+.aboutimg {
+  border-radius: 10px;
+  width: 50%;
+}
+.like {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 180px;
+}
+.like h1 {
+  font-size: 70px;
+  color: #c7c7c7;
+}
+.like p {
+  width: 750px;
+  padding-top: 50px;
+  font-size: 20px;
+  color: white;
+  line-height: 25px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ZDE JE JEDINÁ ZMĚNA - SJEDNOCENÉ KARTY */
+.card {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: #141414;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover {
+  transform: rotate(-5deg) scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover .card__content {
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 1;
+}
+
+.card h1 {
+  font-weight: 900;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  font-weight: 500;
+  color: white;
+  font-size: 20px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  padding-top: 50px;
+  width: 100%;
+  justify-content: center;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 180px;
+  z-index: -100;
+}
+.projects h1 {
+  font-size: 5vw;
+  color: #c7c7c7;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.projects h2 {
+  font-size: 1.7vw;
+  color: white;
+  padding-bottom: 80px;
+  text-align: center;
+}
+.projects p {
+  color: white;
+  font-weight: 600;
+  font-size: 1.4vw;
+}
+.projectsimg {
+  width: 1000px;
+  height: 500px;
+  margin-top: 20px;
+  margin-bottom: 150px;
+  transition: 0.6s;
+}
+.projectsimg:hover {
+  transform: scale(1.065);
+}
+footer {
+  background-color: #1C1C1C;
+  height: 100px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+.footericons img {
+  height: 40px;
+  
+}
+.footericons {
+  display: flex;
+  padding: 30px;
+  margin-left: 30px;
+  gap: 30px;
+}
+.footercontent {
+  display: flex;
+  flex-direction: row;
+}
+.footertext {
+  text-decoration: none;
+  color: white;
+  margin-right: 100px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
+  font-size: 0.7vw;
+}
+.footermail {
+  color: white;
+}
+@media(max-width:1024px){
+  .navbar{
+    height: 10vh;
+  }
+  .navbar.hamburger{
+    width: 2vw;
+  }
+  .firstname {
+    font-size: 12vw;
+  }
+  .surname {
+    font-size: 12vw;
+  }
+  .navbar .logo img{
+    width: 7vw;
+    height: 7vh 
+  }
+  .footertext h1{
+    font-size: 3vw;
+  }
+  .projectsimg{
+    width: 69vw;
+    height: 37vh;
+  }
+  .projects p{
+    font-size: 3vw;
+  }
+  .aboutimg{
+    width: 66vw;
+    height: 35vh;
+  }
+  .about h1 {
+    font-size: 6vw;
+  }
+  .about p{
+    width: 80%;
+  }
+  .projects h1 {
+    font-size: 6vw;
+  }
+  .projects h2 {
+    font-size: 2.5vw;
+  }
+  .hometext h1 {
+    font-size: 3.7vw;
+  }
+  .hometext h2 {
+    font-size: 3vw;
+  }
+  .homesideimages {
+    width: 14vw;
+  }
+  .homeportret {
+    width: 35vw;
+  }
+  .like h1 {
+  font-size: 7vw;
+  }
+  .like p {
+    font-size: 2vw;
+    width: 80%;
+  }
+  .projectsimg {
+    width: 700px;
+    height: 400px;
+  }
+}
+@media(max-width:768px) {
+  .aboutimg {
+    height: 35vw;
+  }
+  .card {
+    height: 300px;
+    width: 200px;
+  }
+  .firstname {
+    font-size: 10vw;
+  }
+  .surname {
+    font-size: 10vw;
+  }
+  .projectsimg {
+    width: 450px;
+    height: 250px;
+  }
+}
+@media(max-width:431px){
+  .like p{
+    font-size: 2vw;
+    width: 100%;
+  }
+  .firstname {
+    font-size: 14vw;
+  }
+  .surname {
+    font-size: 14vw;
+    margin-left: -50vw;
+    margin-bottom: 10vw;
+  }
+  .card{
+    height: 30vh;
+  }
+  footer{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    height: fit-content;
+  }
+  .footertext{
+    margin-right: 0;
+  }
+  .footericons img{
+    width: 5vw;
+  }
+  .footertext h1{
+    font-size: 4vw;
+  }
+  .projectsimg{
+    width: 77vw;
+  }
+  .projekty-text{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10vw
+  }
+  .homeportret {
+    width: 50vw;
+  }
+  .homesideimages {
+    width: 20vw;
+  }
+  .homeimages {
+    margin: 0;
+  }
+  .hometext h1 {
+    font-size: 4.2vw;
+  }
+  .hometext h2 {
+    font-size: 5vw;
+  }
+  .aboutimg {
+    width: 70vw;
+    height: 40vw;
+  }
+  .about h1 {
+    font-size: 11vw;
+  }
+  .about p {
+    font-size: 4vw;
+  }
+  .like h1 {
+    font-size: 12vw;
+  }
+  .like p {
+    font-size: 4vw;
+    width: 90%;
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .projects h1 {
+    font-size: 11vw;
+  }
+  .projects h2 {
+    font-size: 4vw;
+  }
+  .projectsimg {
+    width: 350px;
+    height: 200px;
+    
+  }
+  .footericons {
+    margin: 0;
+  }
+  .footericons img {
+    width: 45px;
+  }
+}
